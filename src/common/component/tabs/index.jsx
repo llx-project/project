@@ -12,9 +12,11 @@
         const tabs = this.renderTabs(options);
         return (
             <div>
-                <div>{tabs}<div>
+                <div>{tabs}</div>
                 <div>{children}</div>
             </div>
         )
     }
 }
+
+export default Tabs;

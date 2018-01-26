@@ -8,10 +8,10 @@ import reducer from './store/reducer';
 import promiseMiddleware from './common/util/promiseMiddleware';
 import './common/asset/index.css';
 
-const operations = store => next => action => {
-    // console.log('nex t', action.type) 
-    next(action);
-}
+// const operations = store => next => action => {
+//     // console.log('nex t', action.type) 
+//     next(action);
+// }
 
 
 const store = createStore(reducer, applyMiddleware(

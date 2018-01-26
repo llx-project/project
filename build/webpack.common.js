@@ -67,10 +67,6 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.jsx']
     },
 
-    alias: {
-        common: '../src/common',
-    },
-    
     plugins: [
         new ExtractTextPlugin({
             filename: '[name].bundle.css',
