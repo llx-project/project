@@ -3,22 +3,22 @@
 
 ### 目录结构
 ````
-|____build  
-| |____config.js
-| |____server.js
-| |____webpack.common.js
+|____build                  #构建配置目录
+| |____config.js            #构建变量配置            
+| |____server.js            #开发服务器                
+| |____webpack.common.js    
 | |____webpack.dev.js
 | |____webpack.prd.js
-|____src
-| |____common
-| | |____api
-| | |____asset
-| | |____component
-| | |____config
-| | |____util
-| |____router
-| |____store
-| |____view
+|____src                    #开发目录
+| |____common               #公共资源目录
+| | |____api                #统一定义接口            
+| | |____asset              #存放各种资源，如共用css、图片、字体文件等
+| | |____component          #通用组件
+| | |____config             #项目配置
+| | |____util               #通用工具库
+| |____router               #路由控制
+| |____store                #store
+| |____view                 #view页面层，目录结构与router配置有对应关系 
 | | |____home
 | | | |____component
 | | | | |____list
