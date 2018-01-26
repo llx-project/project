@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
+import * as userAction from '../../store/user/action';
 import Tabs from '../../common/component/tabs';
 import List from './component/list';
 import './home.less';
@@ -15,6 +16,16 @@ const tabsOptions = [
     }
 ]
 
+@connect(
+    state => ({
+        user: state.user
+    }),
+    dispatch => ({
+        actions: bindActionCreators({
+            ...userAction
+        }, dispatch)
+    })
+)
 export default class extends React.Component {
     constructor(props) {
         super(props);
@@ -30,8 +41,17 @@ export default class extends React.Component {
         })
     }
 
+    handleSetNumber = () => {
+        this.props.actions.addNumber();
+    }
+
+    handleSetAsynNumber = () => {
+        this.props.actions.addAsynType();
+    }
+
     render() {
         const { key } = this.state;
+        const { user } = this.props;
 
         return (
             <div>
@@ -39,6 +59,9 @@ export default class extends React.Component {
                     active={key}
                     options={tabsOptions}>
                 </Tabs>
+                <button onClick={this.handleSetNumber}>设置</button>
+                <button onClick={this.handleSetAsynNumber}>设置异步</button>
+                {user.number}
             </div>
         )
     }

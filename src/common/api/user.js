@@ -9,3 +9,11 @@ export function login({
         password
     })
 }
+
+export function addAsynType(resolve, reject) {
+    return new Promise((re) => {
+        this.setTimeout(() => {
+            resolve({a: 123})
+        }, 2000);
+    })
+}

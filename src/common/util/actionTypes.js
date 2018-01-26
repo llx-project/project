@@ -14,7 +14,7 @@ class Types {
      * @param {any} type 
      * @memberof Types
      */
-    defineType(type) {
+    defineAsynType(type) {
         let status = ['SUCCESS', 'PENDING', 'FAIL'];
         this.types[type] = type;
         
@@ -24,14 +24,13 @@ class Types {
         }
     }
 
-
     /**
-     * 返回 types
-     * @returns 
+     * define 非异步 type
+     * @param {any} type 
      * @memberof Types
      */
-    getType(type) {
-        return this.types[type];
+    defineType(type) {
+        this.types[type] = type;
     }
 }
 

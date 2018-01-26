@@ -1,7 +1,9 @@
+import './user.less';
+
 export default class extends React.Component {
     render() {
         return (
-            <div>work</div>
+            <div>user</div>
         )
     }
 }

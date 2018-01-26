@@ -22,12 +22,10 @@ module.exports = {
             },
             {
                 test: /\.(less|css)$/,
-                // exclude: [/node_modules/],
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'less-loader'
-                ]
+                loader:  ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'less-loader']
+                })
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
@@ -47,47 +45,41 @@ module.exports = {
                     'csv-loader'
                 ]
             },
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: /node_modules/
-            }
-                    
-            // {
-            //     test: /\.css$/,
-            //     exclude: [/node_modules/],
-            //     loader:  ExtractTextPlugin.extract({
-            //         loader: 'css-loader?importLoaders=1',
-            //     })
-            // }
         ]
     },
 
     resolve: {
-        extensions: ['.tsx', '.ts', '.js', '.jsx']
+        extensions: ['.js', '.jsx'],
     },
 
     plugins: [
+
+        // 抽离css合并文件
         new ExtractTextPlugin({
             filename: '[name].bundle.css',
             allChunks: true
         }),
 
+        // 提取共用代码到common文件
         new webpack.optimize.CommonsChunkPlugin({
             name: 'common'
         }),
 
+        // 生成html
         new HtmlWebpackPlugin({
-            title: '管理后台',
-            template: path.resolve(config.SRC_PATH, './tpl.html'),
+            title: '主页',
+            template: path.resolve(config.SRC_PATH, './app.html'),
             filename: 'index.html',
             chunks: ['index', 'common']
         }),
 
+        // 设置全局变量
         new webpack.ProvidePlugin({
             React: 'react',
             _: 'lodash'
         }),
+
+        // 构建时删除dist
         new CleanWebpackPlugin(
             ['dist'],
             {

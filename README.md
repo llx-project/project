@@ -1,8 +1,15 @@
 ## llx项目体系
-依赖于webpack、react、redux、react-router、axios技术栈.
+依赖于webpack、react、redux、react-router、axios技术栈
+
+### 使用
+
+````
+npm start
+````
 
 ### 目录结构
 ````
+|____static                 #非模块化资源    
 |____build                  #构建配置目录
 | |____config.js            #构建变量配置            
 | |____server.js            #开发服务器                

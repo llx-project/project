@@ -47,6 +47,8 @@ export default function promiseMiddleware ({ dispatch }) {
                 dispatch(newAction)
                 next(newAction);
             })
+        } else {
+            next(action);
         }
     }
 }
