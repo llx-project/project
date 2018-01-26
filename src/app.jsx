@@ -17,7 +17,7 @@ import './common/asset/index.css';
 const store = createStore(reducer, applyMiddleware(
     // thunk,
     promiseMiddleware,
-    operations,
+    // operations,
 ))
 
 const app = (
