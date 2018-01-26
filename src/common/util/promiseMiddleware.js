@@ -47,7 +47,7 @@ export default function promiseMiddleware ({ dispatch }) {
                 dispatch(newAction)
                 next(newAction);
             })
-        } else {
+        } else if (type.indexOf('_SUCCESS') == -1 && type.indexOf('_PENDING') == -1 && type.indexOf('_FAIL') == -1){
             next(action);
         }
     }

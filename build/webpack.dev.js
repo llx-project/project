@@ -8,10 +8,6 @@ const config = require('./config');
 
 module.exports = merge(webpackCommon, {
     devtool: 'inline-source-map',
-    // devServer: {
-    //     contentBase: config.OUTPUT_PATH,
-    //     hot: true
-    // },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

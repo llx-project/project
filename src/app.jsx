@@ -8,7 +8,6 @@ import promiseMiddleware from './common/util/promiseMiddleware';
 
 import './common/asset/index.css';
 
-
 const store = createStore(reducer, applyMiddleware(
     promiseMiddleware,
 ))
