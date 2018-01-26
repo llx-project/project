@@ -1,21 +1,55 @@
-## 个人博客系统
+## llx项目体系
 
-### 持续集成
-[Travis CI](https://www.travis-ci.org/)
-
-### 接口文档
-|method|api    |describe               |
-|----|----|----|
-|`post`     |/api/user/regiser      | 注册 |
-|`get`      |/api/logout            | 注销 |
-|`post`     |/api/login             | 登录 |
-|`post`     |/api/admin/article     | 发布文章|
-|`get`      |/api/admin/article/list| 获取文章列表|
-|`get`      |/api/admin/article/{id}| 获取文章|
-|`delete`   |/api/admin/article/{id}| 删除文章|
-|`put`      |/api/admin/article/{id}| 文章| 
-
-### 遇到的坑
-[启动service mongod start 报错](https://github.com/jingxinxin/tiankeng/issues/5)
-
+### 目录结构
+````
+|____.babelrc
+|____.eslintrc
+|____.gitignore
+|____build  
+| |____config.js
+| |____server.js
+| |____webpack.common.js
+| |____webpack.dev.js
+| |____webpack.prd.js
+|____package.json
+|____README.md
+|____src
+| |____app.jsx
+| |____common
+| | |____api
+| | | |____user.js
+| | |____asset
+| | | |____index.css
+| | |____component
+| | | |____tabs
+| | | | |____index.jsx
+| | |____config
+| | | |____index.js
+| | |____util
+| | | |____actionTypes.js
+| | | |____http.js
+| | | |____promiseMiddleware.js
+| | | |____typeAction.js
+| |____router
+| | |____index.jsx
+| |____store
+| | |____reducer.js
+| | |____user
+| | | |____action.js
+| | | |____reducer.js
+| |____tpl.html
+| |____view
+| | |____home
+| | | |____component
+| | | | |____list
+| | | | | |____index.jsx
+| | | |____home.jsx
+| | | |____home.less
+| | | |____index.js
+| | |____work
+| | | |____index.js
+| | | |____work.jsx
+|____tsconfig.json
+|____yarn.lock
+````
  
