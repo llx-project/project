@@ -12,7 +12,8 @@ module.exports = {
     entry: config.CLIENT_ENTRY,
     output: {
         path: config.OUTPUT_PATH,
-        filename: '[name].[hash:6].bundle.js',
+        publicPath: '/',
+        filename: 'static/[name].[hash:6].bundle.js',
     },
     module: {
         rules: [
@@ -57,7 +58,7 @@ module.exports = {
 
         // 抽离css合并文件
         new ExtractTextPlugin({
-            filename: '[name].bundle.css',
+            filename: 'static/[name].bundle.css',
             allChunks: true
         }),
 
@@ -93,7 +94,7 @@ module.exports = {
         new CopyWebpackPlugin([
             {
             from: config.STATIC_PATH,
-            to: config.OUTPUT_PATH,
+            to: config.OUTPUT_STATIC_PATH,
             ignore: ['.*']
             }
         ])

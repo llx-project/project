@@ -3,7 +3,6 @@ import App from '../app/index';
 import * as Home from '../view/home';
 import * as Work from '../view/user';
 
-
 export default function () {
     return (
         <HashRouter>
