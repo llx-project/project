@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import * as userAction from '../../store/user/action';
-import Tabs from '../../common/component/tabs';
-import List from './component/list';
-import './home.less';
+import * as userAction from '../../../store/user/action';
+import Tabs from '../../../common/component/tabs';
+import List from '../component/list';
+import './index.less';
 
 const tabsOptions = [
     {

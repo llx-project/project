@@ -1,4 +1,4 @@
-import './user.less';
+import './index.less';
 
 export default class extends React.Component {
     render() {
