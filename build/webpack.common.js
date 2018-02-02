@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const config = require('./config');
 
 module.exports = {
@@ -87,6 +88,15 @@ module.exports = {
                 dry: false,
             }
        ),
+
+       // 复制static到build目录下
+        new CopyWebpackPlugin([
+            {
+            from: config.STATIC_PATH,
+            to: config.OUTPUT_PATH,
+            ignore: ['.*']
+            }
+        ])
     ]
 }
 

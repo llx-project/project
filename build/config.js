@@ -9,9 +9,17 @@ const SRC_PATH = path.resolve(DIRNAME, './src');
 // 打包输出目录
 const OUTPUT_PATH = path.resolve(DIRNAME, './dist');
 
+// 打包静态
+const OUTPUT_STATIC_PATH = path.resolve(DIRNAME, './dist/static');
+
+// 静态资源目录
+const STATIC_PATH = path.resolve(DIRNAME, './static');
+
 module.exports = {
-    DIRNAME: DIRNAME,
-    SRC_PATH: SRC_PATH,
-    OUTPUT_PATH: OUTPUT_PATH,
+    DIRNAME,
+    SRC_PATH,
+    OUTPUT_PATH,
+    STATIC_PATH,
+    OUTPUT_STATIC_PATH,
     CLIENT_ENTRY: {index: path.resolve(SRC_PATH, './app.jsx')},
 }
